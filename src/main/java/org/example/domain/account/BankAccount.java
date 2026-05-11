@@ -1,16 +1,18 @@
-package org.example;
+package org.example.domain.account;
 
 import org.example.interfaces.AccountOperations;
 
-public class BankAccount implements AccountOperations {
+public abstract class BankAccount implements AccountOperations {
+    private final AccountType type;
     private String accountNumber;
     private String ownerName;
     private double balance;
 
-    public BankAccount(String accountNumber, String ownerName) {
+    public BankAccount(String accountNumber, String ownerName, AccountType type) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = 0.0;
+        this.type = type;
     }
 
     public void deposit(double amount) {
@@ -33,6 +35,10 @@ public class BankAccount implements AccountOperations {
         this.balance -= amount;
     }
 
+    public AccountType getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return "BankAccount{" +
@@ -41,6 +47,5 @@ public class BankAccount implements AccountOperations {
                 ", balance=" + balance +
                 '}';
     }
-
 
 }

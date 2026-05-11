@@ -1,9 +1,9 @@
 package org.example;
 
+import org.example.domain.account.CheckingAccount;
+import org.example.domain.account.SavingsAccount;
 import org.example.interfaces.AccountOperations;
 import org.example.services.AccountService;
-
-import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args){
